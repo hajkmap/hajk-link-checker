@@ -15,41 +15,47 @@ npm run start
 
 ### Base functionality
 
-- Placeholder
+- Check for broken urls in layerconfig, (infotext etc)
+- Check for broken WMS (getCapabilities)
+- Check WMS/WFS for broken urls in features (first 500/50 configurable).
+- JSON Report data are created
+- HTML Reports are created
+- Send HTML report to specified email
 
 ### Config?
 
-```json
+```json 
 {
   "general": {
-    "reportDataPath": "./report-data/",
-    "reportPath": "./reports/",
-    "logPath": "./logs/"
+    "reportDataPath": "./report-data/", // json report data
+    "reportPath": "./reports/", // html reports
+    "logPath": "./logs/" 
   },
   "hajkLayerConfigs": [
     {
-      "id": "Varbergskartan",
-      "url": "https://aaaaaaaa-konf.varberg.se/mapservice/config/layers",
-      "include": true
+      "id": "Varbergskartan", // Title would be a better name
+      "url": "https://aaaaaaaa-konf.varberg.se/mapservice/config/layers", // url to layerconfig in backend
+      "include": true // include when running?
     },
     {
-      "id": "Kommungis",
-      "url": "https://bbbbbbbb-konf.varberg.se/mapservice/config/layers",
-      "include": true
+      "id": "Kommungis", // Title would be a better name
+      "url": "https://bbbbbbbb-konf.varberg.se/mapservice/config/layers", // url to layerconfig in backend
+      "include": true // include when running?
     }
   ],
   "wfs": {
     "qs": "?service=wfs&version=2.0.0&request=GetFeature&typeNames={layerName}&count={count}&outputFormat=json",
-    "maxCount": 500,
-    "maxCountExt": 50
+    // wms is converted to wfs in this old-school way using formatted string above
+    "maxCount": 500, // max features to get (internal)
+    "maxCountExt": 50 // max features to get (external)
   },
   "getCapabilities": {
-    "qs": "?service=WMS&request=GetCapabilities&version={version}"
+    "qs": "?service=WMS&request=GetCapabilities&version={version}" // used to check if wms is broken, we do not like 404
   },
   "sendmail": {
     "subject": "Hajk link report {0}",
     "html": "Hajk link reports attached<br><br><strong>Summary:</strong><br>{0}",
-    "from": "{0}@varberg.se",
+    "from": "{0}@varberg.se", // {0} is replaced with computername of the running computer.
     "to": ["jesper.adeborn@dummy-email.com"],
     "smtpHost": "xxxxxxxxxxx-se.mail.protection.outlook.com",
     "smtpPort": 25
