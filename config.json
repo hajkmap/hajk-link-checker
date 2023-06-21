@@ -1,0 +1,37 @@
+{
+  "general": {
+    "reportDataPath": "./report-data/",
+    "reportPath": "./reports/",
+    "logPath": "./logs/"
+  },
+  "hajkLayerConfigs": [
+    {
+      "id": "Varbergskartan",
+      "url": "https://karta-konf.varberg.se/mapservice/config/layers",
+      "include": false
+    },
+    {
+      "id": "Kommungis",
+      "url": "https://kommungis-konf.varberg.se/mapservice/config/layers",
+      "include": true
+    }
+  ],
+  "wfs": {
+    "qs": "?service=wfs&version=2.0.0&request=GetFeature&typeNames={layerName}&count={count}&outputFormat=json",
+    "maxCount": 500,
+    "maxCountExt": 50
+  },
+  "getCapabilities":{
+    "qs": "?service=WMS&request=GetCapabilities&version={version}"
+  },
+  "sendmail": {
+    "subject": "Hajk link report {0}",
+    "html": "Hajk link reports attached<br><br><strong>Summary:</strong><br>{0}",
+    "from": "{0}@varberg.se",
+    "to": [
+      "jesper.adeborn@varberg.se"
+    ],
+    "smtpHost": "varberg-se.mail.protection.outlook.com",
+    "smtpPort": 25
+  }
+}

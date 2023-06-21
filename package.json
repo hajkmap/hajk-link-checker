@@ -1,0 +1,19 @@
+{
+  "name": "hajk-link-checker",
+  "version": "0.1.0",
+  "description": "Checks links in Hajk layer configs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --max-old-space-size=4096 index.js"
+  },
+  "author": "Jesper Adeborn",
+  "license": "MIT",
+  "dependencies": {
+    "bhttp": "github:joepie91/node-bhttp",
+    "broken-link-checker": "^0.7.8",
+    "node-expose-sspi": "^0.1.55",
+    "node-fetch": "^2.6.1",
+    "sendmail": "^1.6.1"
+  }
+}

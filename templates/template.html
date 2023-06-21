@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{title}</title>
+
+</head>
+
+<body>
+  
+  {parts}
+
+  <style>
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 14px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.625rem;
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: left;
+      margin: 0;
+      vertical-align: top;
+      padding: 4px 12px 4px 0;
+      border-bottom: 1px solid silver;
+    }
+
+    td:first-child {
+      white-space: nowrap;
+    }
+
+    th {
+      position: sticky;
+      top:0;
+      background: #e4e4e4;
+    }
+
+    th:first-child {
+      padding-left: 4px;
+    }
+
+    td.error {
+      font-weight: bold;
+      color: #7e0303;
+    }
+
+    td.warn {
+      font-weight: bold;
+      color: #a06d00;
+    }
+
+    a {
+      color: #0763c1;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    td.error a {
+      font-weight: normal;
+      color: #7e0303;  
+    }
+
+    td.warn a {
+      font-weight: normal;
+      color: #a06d00;  
+    }    
+
+    td.warn.bold a {
+      font-weight: bold;  
+    }        
+
+  </style>
+</body>
+
+</html>
