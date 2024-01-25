@@ -1,5 +1,9 @@
 # Hajk link checker
 
+NOTE: Currently 2 breaking issues...
+1. Does not work with consolidated loading in NodeJS backend.
+2. Does not work with node v20+ because of node-expose-sspi (which is not updated for ages).
+
 Note that this is a rapidly built app with alot of missing error handling. Let's call it a working prototype.
 
 Note that this application was intended for Hajk2 and slightly modified to work with Hajk3+ so the code is not the most modern.
